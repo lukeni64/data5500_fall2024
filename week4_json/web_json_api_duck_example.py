@@ -7,22 +7,50 @@ import requests
 import json
 
 # example url to query datamuse web json api
-example_url = "https://api.datamuse.com/words?ml=duck"
+example_url = "https://api.datamuse.com/words?ml=usu"
 
-# variables to query alphavantage
-word = 'duck'
-key_word = "word"
-key_score = "score"
-search_word = "mallard"
+word_key = "word"
+score_key = "score"
 
-#generate url
-url = 'https://api.datamuse.com/words?ml=' + word
-print(url)
+req = requests.get(example_url)
+txt = req.txt
+print(txt)
+lst_dct = json.loads(txt)
+for dct in lst_dct:
+    if dct["word"] == "uva": 
+        print("uva score:", dct[score_key])
 
-# requests stock data from data muse
-request = requests.get(url)
-# print(request.text) # print to double check data from web json api is good
-dct_full = json.loads(request.text)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# # variables to query alphavantage
+# word = 'duck'
+# key_word = "word"
+# key_score = "score"
+# search_word = "mallard"
+
+# #generate url
+# url = 'https://api.datamuse.com/words?ml=' + word
+# print(url)
+
+# # requests stock data from data muse
+# request = requests.get(url)
+# # print(request.text) # print to double check data from web json api is good
+# dct_full = json.loads(request.text)
 
 
 
