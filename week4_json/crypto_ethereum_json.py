@@ -19,8 +19,14 @@ example_url = "https://api.coingecko.com/api/v3/coins/ethereum/history?date=23-0
 market_data_key = "market_data"
 current_price_key = "current_price"
 usd_key = "usd"
+coin = "ripple"
+url = "https://api.coingecko.com/api/v3/coins/" + coin + "/history?date=23-09-2024&localization=false"
 
+request = requests.get(url)
+dct1 = json.loads(request.text)
 
+usd_price = dct1[market_data_key][current_price_key][usd_key]
+print("The current price of " + coin + " is " + str(usd_price))
 
 
 
