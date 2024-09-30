@@ -5,6 +5,7 @@ This program can be improved in memory efficiency by loading the prices
 in one at a time, right when you need them, using a queue
 '''
 import os
+import sys
 
 
 # load all the prices from the file, into a Python List
