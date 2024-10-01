@@ -19,6 +19,15 @@ file = open(stock_fil, "r")
 
 prices = [float(x) for x in file.readlines()]
 
+prices = []
+
+init_size = 6
+for i in range(init_size):
+    prices.append((file.readline()))
+
+print(prices)
+input("pause")
+
 # iterate through prices in list and run strategy
 days= 5
 buy = 0
