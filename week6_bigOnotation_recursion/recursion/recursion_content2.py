@@ -12,12 +12,15 @@ def sum_numbers(n):
 print(sum_numbers(5))
 
 
-def sum_numbers_rec(n):
+def factorial_rec(n):
+    #base case: when we get to 1, X /\
     if n == 1:
         return n
-        
-    return n + sum_numbers_rec(n-1) # 5 + 4 + 3 + 2 + 1
-    
-    
-print(sum_numbers_rec(5))
+    if n == 0:
+        return 1
+    #logic add up n to n-1
+    #make a recursive call to argument: n-1
+    #return what comes back from our recursive call
+    return n * factorial_rec(n-1)
 
+print(factorial_rec(5))
