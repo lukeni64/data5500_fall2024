@@ -16,7 +16,7 @@ for i in range(1, len(lst)):
             lst[j+1] = lst[j] 
             j -= 1
     lst[j+1] = key 
-    # print(lst) # each iteration
+    print(lst) # each iteration
   
 # Driver code to test above 
 print("insertion sort:", lst)
