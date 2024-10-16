@@ -48,11 +48,20 @@ def insert(node, key):
 	
 # Task 1. Write a function to find the minimum value in the tree
 def findMin(node):
-    pass
+    while node.left != None:
+        node = node.left
+    return node.key 
+            
+	
+		
+    
 
 # Task 2. Write a recursive findMinRec function
 def findMinRec(node):
-    pass
+	if node.left is None:
+		return node
+	return findMinRec(node.left)
+
     
 # Task 3. Write a findMaxRecursive
 def findMaxRec(node):
@@ -136,6 +145,13 @@ def main():
     root = insert(root, 70)
     root = insert(root, 60)
     root = insert(root, 80)
+    root = insert(root, 19)
+    root = insert(root, 18)
+    root = insert(root, 17)
+    root = insert(root, 16)
+    root = insert(root, 15)
+	
+    print("min:", findMinRec(root).key)
     
     # finding values in the tree
     # print(findKey(root, 80))
