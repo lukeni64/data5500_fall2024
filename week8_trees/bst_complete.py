@@ -45,8 +45,7 @@ def insert(node, key):
 def findMin(node):
     # loop down to find the leftmost leaf
     while(node.left is not None):
-    	node = node.left
-    
+        node = node.left
     return node
 
 # Task 2. Write a recursive findMin function

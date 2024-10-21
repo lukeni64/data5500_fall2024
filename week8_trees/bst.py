@@ -65,7 +65,9 @@ def findMinRec(node):
     
 # Task 3. Write a findMaxRecursive
 def findMaxRec(node):
-    pass
+	if node.right is None:
+		return node	
+	return findMaxRec(node.right)
 
 # print tree inorder
 def inorder(root):
@@ -75,10 +77,18 @@ def inorder(root):
 		inorder(root.right)
  
 # Task 4. Write a pre-order print
-
+def preorder(root):
+	if root is not None:
+		print(root.key, end=" ")
+		preorder(root.left)
+		preorder(root.right)
 
 # Task 5. Write a post-order print
-
+def postorder(root):
+	if root is not None:
+		postorder(root.left)
+		postorder(root.right)
+		print(root.key, end=" ")
 		
 # Task 6. write a findKey recursive function
 
@@ -145,14 +155,11 @@ def main():
     root = insert(root, 70)
     root = insert(root, 60)
     root = insert(root, 80)
-    root = insert(root, 19)
-    root = insert(root, 18)
-    root = insert(root, 17)
-    root = insert(root, 16)
-    root = insert(root, 15)
+
 	
     print("min:", findMinRec(root).key)
-    
+    print("max:", findMaxRec(root).key)
+	
     # finding values in the tree
     # print(findKey(root, 80))
     # print(findKey(root, 10))
@@ -161,7 +168,10 @@ def main():
     print("Inorder traversal of the given tree")
     inorder(root)
     # PrintTree(root)
-    
+    print("\nPreorder traversal of the given tree")
+    preorder(root)
+    print("\nPostorder traversal of the given tree")
+    postorder(root)
     ##########################################################
     # Uncomment deleteNode calls after findMin is complete Task 1
     
