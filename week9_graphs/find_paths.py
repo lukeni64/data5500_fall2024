@@ -15,9 +15,10 @@ from itertools import permutations
 import os
 
 # Run this install commands the first time, then comment out these lines (or delete them)
-# Note: these commands could also be run in a terminal.  Running them here, so the entire program below works
-os.system("sudo pip3 install networkx")
-os.system("sudo apt-get install python3-matplotlib")
+# Note: these commands could also be run in a terminal.  Running them here,
+# so the entire program below works
+#34os.system("pip3 install networkx")
+#os.system("pip3 install matplotlib")
 
 import matplotlib
 matplotlib.use('Agg') # putting matplolib into server-only mode, no GUI
@@ -62,6 +63,8 @@ g.add_weighted_edges_from(edges)
 
 # print all nodes
 print(g.nodes)
+
+input("pause so we can talk")
 
 #Saving graph as an image, for review
 pos=nx.circular_layout(g) # pos = nx.nx_agraph.graphviz_layout(G)
